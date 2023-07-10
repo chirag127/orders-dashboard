@@ -61,6 +61,27 @@
             width: 20px;
             margin-right: 5px;
         }
+
+        .total-bill {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .total-bill p {
+            margin-right: 10px;
+            margin-top: 10px;
+
+
+
+        }
+
+        .order-ready-div button {
+            margin-top: 10px;
+            width: 100%;
+
+
+        }
     </style>
     <title>Restaurant Order Management</title>
 </head>
@@ -121,10 +142,9 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="order-items">
+                                    <!-- <div class="order-items">
                                         <p> <img src="veg.png" alt="Non-Veg Item">1 x Paneer Kebab ($405)</p>
                                         <p><img src="non-veg.png" alt="Non-Veg Item">2 x Curry ($48)</p>
-                                        <!-- <p>See all items</p> -->
                                         <a href="#">See all items</a>
                                     </div>
                                     <div class="total-bill">
@@ -132,7 +152,41 @@
                                         <button class="btn btn-primary">Order ready</button>
                                         <button class="btn btn-secondary"><i class="fas fa-print"></i> Print
                                             Receipt</button>
+                                    </div> -->
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="order-items">
+                                                <p> <img src="veg.png" alt="Non-Veg Item">1 x Paneer Kebab ($405)</p>
+                                                <p><img src="non-veg.png" alt="Non-Veg Item">2 x Curry ($48)</p>
+                                                <a href="#">See all items</a>
+                                            </div>
+
+                                        </div>
+
                                     </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="total-bill">
+                                                <p>Total Bill Paid: $1047</p> <button class="btn btn-secondary"><i
+                                                        class="fas fa-print"></i> Print
+                                                    Receipt</button>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="col-md-12 order-ready-div">
+                                            <button class="btn btn-primary">Order ready</button>
+                                        </div>
+                                    </div>
+
+
+
                                 </div>
                                 <div class="col-md-4">
                                     <div class="delivery-address">
