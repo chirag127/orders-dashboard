@@ -57,9 +57,12 @@
         }
 
         .green-tick {
+            margin-right: 5px;
+        }
+
+        .logo {
             height: 20px;
             width: 20px;
-            margin-right: 5px;
         }
 
         .total-bill {
@@ -74,6 +77,11 @@
 
 
 
+        }
+
+        .total-bill.print-reciept {
+            color: #007bff;
+            cursor: pointer;
         }
 
         .order-ready-div button {
@@ -131,10 +139,12 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <p> <img class="green-tick" src="gt.png" alt="Non-Veg Item">Placed at 2:00
+                                            <p> <img class="green-tick logo" src="gt.png" alt="Non-Veg Item">Placed at
+                                                2:00
                                                 pm</p>
                                             <!-- <p> <img src="gt.png" alt="Non-Veg Item">Accepted at 2:05 pm</p> -->
-                                            <p> <img class="green-tick" src="gt.png" alt="Non-Veg Item">Accepted at 2:05
+                                            <p> <img class="green-tick logo" src="gt.png" alt="Non-Veg Item">Accepted at
+                                                2:05
                                                 pm</p>
 
 
@@ -142,17 +152,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <!-- <div class="order-items">
-                                        <p> <img src="veg.png" alt="Non-Veg Item">1 x Paneer Kebab ($405)</p>
-                                        <p><img src="non-veg.png" alt="Non-Veg Item">2 x Curry ($48)</p>
-                                        <a href="#">See all items</a>
-                                    </div>
-                                    <div class="total-bill">
-                                        <p>Total Bill Paid: $1047</p>
-                                        <button class="btn btn-primary">Order ready</button>
-                                        <button class="btn btn-secondary"><i class="fas fa-print"></i> Print
-                                            Receipt</button>
-                                    </div> -->
+
 
                                     <div class="row">
                                         <div class="col-md-12">
@@ -169,9 +169,8 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="total-bill">
-                                                <p>Total Bill Paid: $1047</p> <button class="btn btn-secondary"><i
-                                                        class="fas fa-print"></i> Print
-                                                    Receipt</button>
+                                                <p>Total Bill Paid: $1047</p>
+                                                <p class="print-reciept"> <i class="fas fa-print"></i> Print</p>
 
                                             </div>
 
@@ -189,29 +188,51 @@
 
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="delivery-address">
-                                        <!-- <p>Delivery Address: A-22, One Horizon Centre, Golf Course Road, DLF Phase 5,
-                                            Sector 43</p> -->
+                                    <!-- <div class="delivery-address">
                                         <h5>Delivery Address</h5>
                                         <p>A-22, One Horizon Centre, Golf Course Road, DLF Phase 5, Sector 43</p>
                                         <button class="btn btn-secondary"><i class="far fa-copy"></i> Copy
 
-                                            Address</button>
+                                            Address</button> -->
+
+                                    <!-- </div> -->
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="delivery-address">
+                                                <h5>Delivery Address</h5>
+                                                <p>A-22, One Horizon Centre, Golf Course Road, DLF Phase 5, Sector 43
+                                                </p>
+                                                <p class="copy button"><i class="far fa-copy"></i> </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- support icon -->
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="support">
+                                                <img class="logo" src="support.png" alt="Support"> <span>Support</span>
+
+                                            </div>
+
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="tab-pane fade" id="ready">
-                    <!-- Add ready orders here -->
-                </div>
-                <div class="tab-pane fade" id="picked-up">
-                    <!-- Add picked-up orders here -->
+                    <div class="tab-pane fade" id="ready">
+                        <!-- Add ready orders here -->
+                    </div>
+                    <div class="tab-pane fade" id="picked-up">
+                        <!-- Add picked-up orders here -->
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
