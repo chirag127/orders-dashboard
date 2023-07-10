@@ -1,103 +1,169 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Restaurant Order Management</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-        @media (min-width: 576px) {
-            .card-columns {
-                column-count: 2;
-            }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .order-card {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        @media (min-width: 768px) {
-            .card-columns {
-                column-count: 3;
-            }
+        .order-card .row {
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 10px;
+        }
+
+        .order-card .col-md-4 {
+            border-right: 1px dotted #ccc;
+            padding-right: 20px;
+        }
+
+        .order-card .col-md-4:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+
+        .order-card .order-items {
+            margin-bottom: 10px;
+        }
+
+        .order-card .order-items a {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .order-card .order-items img {
+            height: 20px;
+            width: 20px;
+            margin-right: 5px;
+        }
+
+        .order-card .total-bill {
+            margin-bottom: 10px;
+        }
+
+        .order-card .delivery-address {
+            margin-bottom: 10px;
+        }
+
+        .green-tick {
+            height: 20px;
+            width: 20px;
+            margin-right: 5px;
         }
     </style>
+    <title>Restaurant Order Management</title>
 </head>
 
 <body>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-12">
-                <h3>Orders</h3>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <h2>Order Management</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <ul class="nav nav-tabs" id="orderTabs" role="tablist">
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" id="preparing-tab" data-toggle="tab" href="#preparing" role="tab"
-                            aria-controls="preparing" aria-selected="true">Preparing</a>
+                        <a class="nav-link active" data-toggle="tab" href="#preparing">Preparing</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="ready-tab" data-toggle="tab" href="#ready" role="tab"
-                            aria-controls="ready" aria-selected="false">Ready</a>
+                        <a class="nav-link" data-toggle="tab" href="#ready">Ready</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="picked-up-tab" data-toggle="tab" href="#picked-up" role="tab"
-                            aria-controls="picked-up" aria-selected="false">Picked up</a>
+                        <a class="nav-link" data-toggle="tab" href="#picked-up">Picked up</a>
                     </li>
                 </ul>
-                <div class="tab-content" id="orderTabsContent">
-                    <div class="tab-pane fade show active" id="preparing" role="tabpanel"
-                        aria-labelledby="preparing-tab">
-                        <div class="card-columns">
-                            <!-- Example Order Card (Preparing) -->
-                            <!-- Card layout -->
-                            <div class="container">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-sm-4">
-                                                <h6>Restaurant Name: </h6>
-                                                <p>Kevin’s BBQ House</p>
-                                                <h6>Order ID :</h6>
-                                                <p>12345678
-                                                <p>
-                                                <h6>Timeline:</h6>
-                                                <p>Ordered At : 1 PM</p>
-                                                <p>Accepted at : 1:05 PM</p>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <h6>Order List:</h6>
-                                                <p><span class="badge badge-success">Veg</span> 2 X Salad</p>
-                                                <p><span class="badge badge-danger">NV</span> 1 X Chicken Wings</p>
-                                                <p><a href="#">View All</a></p>
-                                                <h6>Total Price: \$25</h6>
-                                                <h6>Payment: <span class="badge badge-success">Paid</span></h6>
-                                                <button type="button" class="btn btn-primary">Order Ready</button>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <h6>Delivery Address:</h6>
-                                                <p>Street name xyz, building ABC, city</p>
-                                            </div>
+                <div class="tab-content mt-3">
+                    <div class="tab-pane fade show active" id="preparing">
+                        <div class="order-card">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <!-- <p>Restaurant Name: Kebab & Curry</p> chose h3 h4 rtc-->
+
+                                            <h3>Kebab & Curry</h3>
+
+                                            <!-- address in small -->
+                                            <p class="small">
+                                                Gurgaon Sector 43</p>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p><strong>ID: </strong> 174404 0262</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p> <img class="green-tick" src="gt.png" alt="Non-Veg Item">Placed at 2:00
+                                                pm</p>
+                                            <!-- <p> <img src="gt.png" alt="Non-Veg Item">Accepted at 2:05 pm</p> -->
+                                            <p> <img class="green-tick" src="gt.png" alt="Non-Veg Item">Accepted at 2:05
+                                                pm</p>
+
+
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-md-4">
+                                    <div class="order-items">
+                                        <p> <img src="veg.png" alt="Non-Veg Item">1 x Paneer Kebab ($405)</p>
+                                        <p><img src="non-veg.png" alt="Non-Veg Item">2 x Curry ($48)</p>
+                                        <!-- <p>See all items</p> -->
+                                        <a href="#">See all items</a>
+                                    </div>
+                                    <div class="total-bill">
+                                        <p>Total Bill Paid: $1047</p>
+                                        <button class="btn btn-primary">Order ready</button>
+                                        <button class="btn btn-secondary"><i class="fas fa-print"></i> Print
+                                            Receipt</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="delivery-address">
+                                        <!-- <p>Delivery Address: A-22, One Horizon Centre, Golf Course Road, DLF Phase 5,
+                                            Sector 43</p> -->
+                                        <h5>Delivery Address</h5>
+                                        <p>A-22, One Horizon Centre, Golf Course Road, DLF Phase 5, Sector 43</p>
+                                        <button class="btn btn-secondary"><i class="far fa-copy"></i> Copy
+
+                                            Address</button>
+                                    </div>
+                                </div>
                             </div>
-                            <!-- End Example Order Card -->
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="ready" role="tabpanel" aria-labelledby="ready-tab">
-                        <!-- Ready Orders -->
-                    </div>
-                    <div class="tab-pane fade" id="picked-up" role="tabpanel" aria-labelledby="picked-up-tab">
-                        <!-- Picked up Orders -->
-                    </div>
+                </div>
+                <div class="tab-pane fade" id="ready">
+                    <!-- Add ready orders here -->
+                </div>
+                <div class="tab-pane fade" id="picked-up">
+                    <!-- Add picked-up orders here -->
                 </div>
             </div>
         </div>
     </div>
+    </div>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <!-- Font Awesome JS -->
 </body>
 
 </html>
